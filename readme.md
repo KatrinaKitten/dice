@@ -14,7 +14,7 @@ allprojects {
 }
 
 dependencies {
-  implementation 'com.github.swordglowsblue:dice:1.0'
+  implementation 'com.github.swordglowsblue:dice:master-SNAPSHOT'
 }
 ```
 
@@ -51,4 +51,3 @@ result.value    //: Int - The result of the roll
 result.rolls    //: List<Int> - Individual die results
 result.subRolls //: List<RollResult> - Other rolls made as part of this roll
 ```
-
