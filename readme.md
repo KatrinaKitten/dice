@@ -27,7 +27,7 @@ See the wiki page for [Expression Syntax](https://github.com/swordglowsblue/dice
 
 ## Examples
 
-##### Parsing a dice expression
+### Parsing a dice expression
 ```kotlin
 import com.swordglowsblue.dice.*
 
@@ -35,7 +35,7 @@ val expr: DiceExpr = DiceParser.parse("4d6")
   // => BasicDice(Const(4), Const(6))
 ```
 
-##### Evaluating a parsed expression
+### Evaluating a parsed expression
 ```kotlin
 val result: EvalResult = expr.eval()
 result.expr     //: DiceExpr - The expression
@@ -43,7 +43,7 @@ result.value    //: Int - The result of the expression
 result.subRolls //: List<RollResult> - Dice rolls made during evaluation
 ```
 
-##### Working with `RollResult`
+### Working with `RollResult`
 ```kotlin
 val rollResult: RollResult = expr.subRolls[0]
 result.expr     //: Dice - The dice that were rolled
