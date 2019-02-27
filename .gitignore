@@ -1,0 +1,8 @@
+.gradle
+.idea
+.kotlintest
+gradle/
+build/
+gradlew
+gradlew.bat
+gradle.properties
