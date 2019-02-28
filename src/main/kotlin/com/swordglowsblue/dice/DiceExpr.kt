@@ -6,6 +6,7 @@ interface DiceExpr {
   override fun hashCode(): Int
   override fun toString(): String
   override fun equals(other: Any?): Boolean
+  fun parenthesize() = "($this)"
 }
 
 interface Dice : DiceExpr {
@@ -19,6 +20,7 @@ interface Dice : DiceExpr {
   fun roll(): List<Int>
   fun rollResult() = RollResult(this, *(lhs.subRolls + rhs.subRolls).toTypedArray())
   override fun eval() = rollResult().toEvalResult()
+  override fun toString(): String
 
   abstract class Impl(
     override val lhsExpr: DiceExpr,
@@ -37,6 +39,7 @@ interface Dice : DiceExpr {
 data class Const(val value: Int) : DiceExpr {
   override fun eval() = EvalResult(this, value)
   override fun toString() = "$value"
+  override fun parenthesize() = "$this"
 }
 
 sealed class BinaryOp(
@@ -65,13 +68,13 @@ sealed class BinaryOp(
 
 class BasicDice(lhs: DiceExpr, rhs: DiceExpr) : Dice.Impl(lhs, rhs) {
   constructor(lhs: Int, rhs: Int) : this(Const(lhs), Const(rhs))
-  override fun toString() = "${count}d$sides"
+  override fun toString() = "${lhsExpr.parenthesize()}d${rhsExpr.parenthesize()}"
   override fun roll() = List(count) { (1..sides).random() }
 }
 
 class FateDice(lhs: DiceExpr) : Dice.Impl(lhs, Const(0)) {
   constructor(lhs: Int) : this(Const(lhs))
-  override fun toString() = "${count}dF"
+  override fun toString() = "${lhsExpr.parenthesize()}dF"
   override fun roll() = List(count) { (-1..1).random() }
 }
 

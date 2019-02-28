@@ -19,9 +19,9 @@ class ResultTest : StringSpec({
     val (sub1, sub2) = result.subRolls
     val sub3 = sub2.subRolls[0]
     result.toString() shouldBe
-      "2d3 + ${sub3.value}d6 = ${result.value}" +
+      "2d3 + (2d3)d6 = ${result.value}" +
       "\n  2d3 = ${sub1.value} ${sub1.rolls}" +
-      "\n  ${sub3.value}d6 = ${sub2.value} ${sub2.rolls}" +
+      "\n  (2d3)d6 = ${sub2.value} ${sub2.rolls}" +
       "\n    2d3 = ${sub3.value} ${sub3.rolls}"
   }
 })
