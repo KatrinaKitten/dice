@@ -13,7 +13,7 @@ data class EvalResult(
 ) : Result<DiceExpr> {
   constructor(expr: DiceExpr, value: Int, vararg subRolls: RollResult) : this(expr, value, subRolls.toList())
   override fun toString() =
-    "$expr = $value\n${subRolls.joinToString("\n").trimIndent().indent()}".trim()
+    "${expr.exprString()} = $value\n${subRolls.joinToString("\n").trimIndent().indent()}".trim()
 }
 
 data class RollResult(
@@ -32,5 +32,5 @@ data class RollResult(
   fun withSubRolls(vararg subRolls: RollResult) = RollResult(expr, rolls, this.subRolls + subRolls.toList())
 
   override fun toString() =
-    "$expr = $value $rolls\n${subRolls.joinToString("\n").indent()}".trim()
+    "${expr.exprString()} = $value $rolls\n${subRolls.joinToString("\n").indent()}".trim()
 }
