@@ -6,6 +6,7 @@ interface DiceExpr {
   override fun hashCode(): Int
   override fun toString(): String
   override fun equals(other: Any?): Boolean
+  fun exprString() = toString()
   fun parenthesize() = "($this)"
 }
 
@@ -55,7 +56,7 @@ sealed class BinaryOp(
   class Mod(lhs: DiceExpr, rhs: DiceExpr) : BinaryOp(lhs, rhs, "%", Int::rem)
   class Pow(lhs: DiceExpr, rhs: DiceExpr) : BinaryOp(lhs, rhs, "^", Int::pow)
 
-  override fun toString() = "$lhs $text $rhs"
+  override fun toString() = "${lhs.exprString()} $text ${rhs.exprString()}"
   override fun eval(): EvalResult {
     val l = lhs.eval()
     val r = rhs.eval()
@@ -68,13 +69,15 @@ sealed class BinaryOp(
 
 class BasicDice(lhs: DiceExpr, rhs: DiceExpr) : Dice.Impl(lhs, rhs) {
   constructor(lhs: Int, rhs: Int) : this(Const(lhs), Const(rhs))
-  override fun toString() = "${lhsExpr.parenthesize()}d${rhsExpr.parenthesize()}"
+  override fun toString() = "${count}d$sides"
+  override fun exprString() = "${lhsExpr.parenthesize()}d${rhsExpr.parenthesize()}"
   override fun roll() = List(count) { (1..sides).random() }
 }
 
 class FateDice(lhs: DiceExpr) : Dice.Impl(lhs, Const(0)) {
   constructor(lhs: Int) : this(Const(lhs))
-  override fun toString() = "${lhsExpr.parenthesize()}dF"
+  override fun toString() ="${count}dF"
+  override fun exprString() = "${lhsExpr.parenthesize()}dF"
   override fun roll() = List(count) { (-1..1).random() }
 }
 
