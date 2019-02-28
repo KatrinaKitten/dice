@@ -104,17 +104,13 @@ object DiceParser {
       tokens = head + Token.UnaryOp(prev(), curr() as Token.Operator) + tail
     }
 
-    chomp({ curr() is Token.OpenParen                  }, consumeParens  )
-    chomp({ curr() is Token.Die                        }, collapseBinop  )
-    chomp({ curr() is Token.DieFate                    }, collapsePostop )
-    chomp({ curr() is Token.DieExpl                    }, collapsePostop )
-    chomp({ curr() is Token.Adv || curr() is Token.Dis }, collapsePostop )
-    chomp({ curr() is Token.Pow                        }, collapseBinop  )
-    chomp({ curr() is Token.Mul                        }, collapseBinop  )
-    chomp({ curr() is Token.Div                        }, collapseBinop  )
-    chomp({ curr() is Token.Mod                        }, collapseBinop  )
-    chomp({ curr() is Token.Add                        }, collapseBinop  )
-    chomp({ curr() is Token.Sub                        }, collapseBinop  )
+    chomp({ curr() is Token.OpenParen                                             }, consumeParens  )
+    chomp({ curr() is Token.Die                                                   }, collapseBinop  )
+    chomp({ curr() is Token.DieFate                                               }, collapsePostop )
+    chomp({ curr() is Token.DieExpl || curr() is Token.Adv || curr() is Token.Dis }, collapsePostop )
+    chomp({ curr() is Token.Pow                                                   }, collapseBinop  )
+    chomp({ curr() is Token.Mul || curr() is Token.Div || curr() is Token.Mod     }, collapseBinop  )
+    chomp({ curr() is Token.Add || curr() is Token.Sub                            }, collapseBinop  )
     if(tokens.size > 1) throw DiceParserException("Leftover tokens were present after parsing")
     return tokens[0]
   }
