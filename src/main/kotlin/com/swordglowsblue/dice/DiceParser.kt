@@ -115,7 +115,7 @@ object DiceParser {
     return tokens[0]
   }
 
-  private fun convert(ast: Token): DiceExpr = when(ast) {
+  private fun convert(ast: Token): Expr = when(ast) {
     is Token.BinaryOp -> when(ast.opr) {
       is Token.Die -> BasicDice(convert(ast.lhs), convert(ast.rhs))
       else -> when(ast.opr.text) {

@@ -29,6 +29,10 @@ class ParserTest : StringSpec({
       DiceFn.Explode(BasicDice(BasicDice(1, 4), BasicDice(1, 20)))
     DiceParser.parse("4d6!!!!") shouldBe
       DiceFn.Explode(DiceFn.Explode(DiceFn.Explode(DiceFn.Explode(BasicDice(4, 6)))))
+    DiceParser.parse("1d20adv!") shouldBe
+      DiceFn.Explode(DiceFn.Advantage(BasicDice(1, 20)))
+    DiceParser.parse("1d20!adv") shouldBe
+      DiceFn.Advantage(DiceFn.Explode(BasicDice(1, 20)))
   }
 
   "DiceParser.parse should throw on invalid syntax" {
