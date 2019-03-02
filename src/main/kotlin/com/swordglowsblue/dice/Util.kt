@@ -13,10 +13,15 @@ internal val <T, C : Collection<T>> C.tail get():List<T> = drop(1)
 internal operator fun Regex.contains(text:Char):Boolean = contains(text.toString())
 internal operator fun Regex.contains(text:CharSequence):Boolean = this.matches(text)
 
+/** Forces implementation of equals/hashCode and exposes the equalsImpl method. */
 interface Equatable {
   override fun hashCode(): Int
   override fun equals(other: Any?): Boolean
 }
 
-internal inline fun <reified T : Equatable> T.equalsImpl(other: Any?) =
+/**
+ * Simple implementation of a generic equals. Based on reference, type, and hashCode.
+ * Does not account for super.equals.
+ */
+inline fun <reified T : Equatable> T.equalsImpl(other: Any?) =
   other === this || (other is T && other.hashCode() == this.hashCode())

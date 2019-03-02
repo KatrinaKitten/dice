@@ -1,5 +1,8 @@
 package com.swordglowsblue.dice
 
+/**
+ * The main interface for parsing expressions.
+ */
 object DiceParser {
   private sealed class Token(val text: String) {
     interface DieOp
@@ -64,7 +67,9 @@ object DiceParser {
       throw DiceParserException("Encountered unexpected character $c")
   }
 
+  /** Parse a string into an [Expr]. */
   fun parse(from: String) = convert(parse(lex(from)))
+
   private fun parse(from: List<Token>): Token {
     if(from.isEmpty()) throw DiceParserException("Cannot parse an empty expression")
 
@@ -153,5 +158,6 @@ object DiceParser {
     else -> throw DiceParserException("Cannot convert token $ast to DiceExpr")
   }
 
+  /** Represents an error during the parsing of a dice expression. */
   class DiceParserException(message: String) : Exception(message)
 }

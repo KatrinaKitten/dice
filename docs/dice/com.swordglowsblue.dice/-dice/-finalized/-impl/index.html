@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Dice.Finalized.Impl - dice</title>
+<link rel="stylesheet" href="../../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../../index.html">dice</a>&nbsp;/&nbsp;<a href="../../../index.html">com.swordglowsblue.dice</a>&nbsp;/&nbsp;<a href="../../index.html">Dice</a>&nbsp;/&nbsp;<a href="../index.html">Finalized</a>&nbsp;/&nbsp;<a href="./index.html">Impl</a><br/>
+<br/>
+<h1>Impl</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Impl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">Finalized</span></a><span class="symbol">, </span><a href="../../index.html"><span class="identifier">Dice</span></a></code>
+<p>A finalized <a href="../../index.html">Dice</a> instance, with both sides evaluated.</p>
+<h3>Parameters</h3>
+<p><a name="source"></a>
+<code>source</code> - The <a href="../../index.html">Dice</a> to finalize</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="count.html">count</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">count</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The number of dice in this set</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lhs.html">lhs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">lhs</span><span class="symbol">: </span><a href="../../../-result/index.html"><span class="identifier">Result</span></a></code>
+<p>The result of evaluating <a href="../../lhs-expr.html">lhsExpr</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lhs-expr.html">lhsExpr</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">lhsExpr</span><span class="symbol">: </span><a href="../../../-evaluated/index.html"><span class="identifier">Evaluated</span></a></code>
+<p>The expression on the left-hand side of the dice (count)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rhs.html">rhs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">rhs</span><span class="symbol">: </span><a href="../../../-result/index.html"><span class="identifier">Result</span></a></code>
+<p>The result of evaluating <a href="../../rhs-expr.html">rhsExpr</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rhs-expr.html">rhsExpr</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">rhsExpr</span><span class="symbol">: </span><a href="../../../-evaluated/index.html"><span class="identifier">Evaluated</span></a></code>
+<p>The expression on the right-hand side of the dice (sides)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="sides.html">sides</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">sides</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The number of sides on each die in this set</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">source</span><span class="symbol">: </span><a href="../../index.html"><span class="identifier">Dice</span></a></code>
+<p>The <a href="../../index.html">Dice</a> to finalize</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="clone.html">clone</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clone</span><span class="symbol">(</span><span class="identifier" id="com.swordglowsblue.dice.Dice.Finalized.Impl$clone(com.swordglowsblue.dice.Expr, com.swordglowsblue.dice.Expr)/lhs">lhs</span><span class="symbol">:</span>&nbsp;<a href="../../../-expr/index.html"><span class="identifier">Expr</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.swordglowsblue.dice.Dice.Finalized.Impl$clone(com.swordglowsblue.dice.Expr, com.swordglowsblue.dice.Expr)/rhs">rhs</span><span class="symbol">:</span>&nbsp;<a href="../../../-expr/index.html"><span class="identifier">Expr</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Impl</span></a></code>
+<p>Create an identical instance of this die type, replacing the sides with new expressions if given.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="com.swordglowsblue.dice.Dice.Finalized.Impl$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="finalize.html">finalize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">finalize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Impl</span></a></code>
+<p>Convert this to a <a href="../index.html">Finalized</a> version, evaluating the expressions on both sides.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">finalize</span><span class="symbol">(</span><span class="identifier" id="com.swordglowsblue.dice.Dice.Finalized.Impl$finalize(kotlin.Function1((com.swordglowsblue.dice.Dice.Finalized, com.swordglowsblue.dice.Dice.Finalized.Impl.finalize.T)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">Finalized</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="finalize.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="finalize.html#T"><span class="identifier">T</span></a></code>
+<p>Convert this to a <a href="../index.html">Finalized</a> version, evaluating the expressions on both sides, and pass that instance to the given block.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
