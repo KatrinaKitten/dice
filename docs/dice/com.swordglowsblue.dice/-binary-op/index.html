@@ -1,0 +1,236 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinaryOp - dice</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">dice</a>&nbsp;/&nbsp;<a href="../index.html">com.swordglowsblue.dice</a>&nbsp;/&nbsp;<a href="./index.html">BinaryOp</a><br/>
+<br/>
+<h1>BinaryOp</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">BinaryOp</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-expr/index.html"><span class="identifier">Expr</span></a></code>
+<p>A binary operator such as <code>+</code>, <code>*</code>, or <code>^</code>.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-add/index.html">Add</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Add</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The addition operator (<code>+</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-div/index.html">Div</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Div</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The integer division operator (<code>/</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mod/index.html">Mod</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Mod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The modulus/remainder operator (<code>%</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mul/index.html">Mul</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Mul</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The multiplication operator (<code>*</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pow/index.html">Pow</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Pow</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The exponentiation operator (<code>^</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-sub/index.html">Sub</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Sub</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The subtraction operator (<code>-</code>).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="fn.html">fn</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">fn</span><span class="symbol">: </span><span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The function used to execute this operator</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lhs.html">lhs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">lhs</span><span class="symbol">: </span><a href="../-expr/index.html"><span class="identifier">Expr</span></a></code>
+<p>The expression on the left-hand side of this operator</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rhs.html">rhs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">rhs</span><span class="symbol">: </span><a href="../-expr/index.html"><span class="identifier">Expr</span></a></code>
+<p>The expression on the left-hand side of this operator</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="text.html">text</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">text</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The textual representation of this operator</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-expr/source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">source</span><span class="symbol">: </span><a href="../-expr/index.html"><span class="identifier">Expr</span></a></code>
+<p>The original <a href="../-expr/index.html">Expr</a> for this expression (<code>this</code> for expressions that don't wrap another instance)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="com.swordglowsblue.dice.BinaryOp$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="eval.html">eval</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">eval</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-result/index.html"><span class="identifier">Result</span></a></code>
+<p>Evaluate this expression.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-expr/parenthesize.html">parenthesize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">parenthesize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Stringify this expression and wrap it in parentheses if applicable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-add/index.html">Add</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Add</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The addition operator (<code>+</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-div/index.html">Div</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Div</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The integer division operator (<code>/</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mod/index.html">Mod</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Mod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The modulus/remainder operator (<code>%</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mul/index.html">Mul</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Mul</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The multiplication operator (<code>*</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pow/index.html">Pow</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Pow</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The exponentiation operator (<code>^</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-sub/index.html">Sub</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Sub</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BinaryOp</span></a></code>
+<p>The subtraction operator (<code>-</code>).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
