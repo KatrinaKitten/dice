@@ -1,3 +1,5 @@
+# Expression Syntax
+
 Most basic [dice notation](https://en.wikipedia.org/wiki/Dice_notation) should work outright. The table below outlines 
 in detail all syntax supported by this library. 
 

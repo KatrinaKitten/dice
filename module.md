@@ -3,7 +3,7 @@
 ### Expression Syntax
 
 Most basic [dice notation](https://en.wikipedia.org/wiki/Dice_notation) should work outright. 
-See [here](https://github.com/swordglowsblue/dice/wiki/Expression-Syntax) for detailed documentation on 
+See [here](https://swordglowsblue.github.com/dice/expression-syntax) for detailed documentation on 
     supported syntax, operator precedence, etc.
 
 - Basic dice: `4d6`
