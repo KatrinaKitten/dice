@@ -19,11 +19,11 @@ dependencies {
 ```
 
 ## API Docs
-See [here](https://swordglowsblue.github.com/dice/latest).
+See [here](https://docs.swordglowsblue.com/dice).
 
 ## Expression Syntax
 Most basic [dice notation](https://en.wikipedia.org/wiki/Dice_notation) should work outright.
-See the wiki page for [Expression Syntax](https://swordglowsblue.github.com/dice/expression-syntax) for details.
+See the wiki page for [Expression Syntax](https://docs.swordglowsblue.com/dice/expression-syntax) for details.
 
 ## Examples
 
