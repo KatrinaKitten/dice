@@ -19,7 +19,7 @@ dependencies {
 ```
 
 ## API Docs
-See [here](https://docs.swordglowsblue.com/dice).
+See [here](https://docs.swordglowsblue.com/dice).   
 
 ## Expression Syntax
 Most basic [dice notation](https://en.wikipedia.org/wiki/Dice_notation) should work outright.
